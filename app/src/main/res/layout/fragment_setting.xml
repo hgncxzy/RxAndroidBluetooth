@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="left"
+    android:orientation="vertical"
+    tools:ignore="RtlHardcoded,SpUsage,HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
+
+        <com.xzy.ble.rxandroidbluetooth.widget.LSettingItem
+            android:id="@+id/item_one"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:LtextColor="#333333"
+            app:isShowUnderLine="true"
+            app:leftText="Start automatic scanning after app initiation"
+            app:rightStyle="iconSwitch" />
+
+        <com.xzy.ble.rxandroidbluetooth.widget.LSettingItem
+            android:id="@+id/item_two"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:LtextColor="#333333"
+            app:isShowUnderLine="true"
+            app:leftText="Connect to previous device automatically"
+            app:rightStyle="iconSwitch" />
+
+        <com.xzy.ble.rxandroidbluetooth.widget.LSettingItem
+            android:id="@+id/item_three"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:LtextColor="#333333"
+            app:isShowUnderLine="true"
+            app:leftText="Display only the device with designated name"
+            app:rightStyle="iconSwitch" />
+
+        <scut.carson_ho.diy_view.SuperEditText
+            android:id="@+id/input_dev_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:cursor="@drawable/cursor"
+            app:delete_height="60"
+            app:delete_width="60"
+            app:delete_x="0"
+            app:delete_y="0"
+            app:ic_delete="@drawable/delete"
+            app:left_height="60"
+            app:left_width="60"
+            app:left_x="0"
+            app:left_y="0"
+            app:lineColor_click="@color/colorfocus"
+            app:lineColor_unclick="@color/colorDeafult"
+            app:linePosition="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/scan_input_name_desc"
+            android:textColor="#999999"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:text="Version:1.0.0 by xzy."
+        android:textColor="#999999"
+        android:textSize="16dp" />
+</LinearLayout>

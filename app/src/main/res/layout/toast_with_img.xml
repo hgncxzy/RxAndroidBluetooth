@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/toast_shape"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="21dp"
+    android:paddingTop="17dp"
+    android:paddingRight="21dp"
+    android:paddingBottom="17dp">
+
+    <ImageView
+        android:id="@+id/tv_image"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:gravity="center"
+        tools:src="@mipmap/ic_success"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:maxWidth="124dp"
+        android:minWidth="37dp"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
+        tools:text="登录成功登录成功登录成功登录成功登录成功登录成功"
+        tools:ignore="SpUsage" />
+</LinearLayout>

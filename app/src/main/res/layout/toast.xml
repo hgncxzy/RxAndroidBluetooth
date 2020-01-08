@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/toast_shape"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="21dp"
+    android:paddingTop="17dp"
+    android:paddingRight="21dp"
+    android:paddingBottom="17dp">
+
+    <TextView
+        android:id="@android:id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxWidth="124dp"
+        android:minWidth="37dp"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
+        tools:text="登录" />
+</LinearLayout>

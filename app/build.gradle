@@ -1,0 +1,140 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.xzy.ble.rxandroidbluetooth"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        def keyProps = new Properties()
+
+        debug {
+            keyProps.load(new FileInputStream(rootProject.file('signature/debug-keystore.properties')))
+            storeFile file(keyProps["storeFile"])
+            storePassword keyProps["storePass"]
+            keyAlias keyProps["keyAlias"]
+            keyPassword keyProps["keyPass"]
+        }
+
+        prerelease {
+            keyProps.load(new FileInputStream(rootProject.file('signature/prerelease-keystore.properties')))
+            storeFile file(keyProps["storeFile"])
+            storePassword keyProps["storePass"]
+            keyAlias keyProps["keyAlias"]
+            keyPassword keyProps["keyPass"]
+        }
+
+        release {
+            keyProps.load(new FileInputStream(rootProject.file('signature/release-keystore.properties')))
+            storeFile file(keyProps["storeFile"])
+            storePassword keyProps["storePass"]
+            keyAlias keyProps["keyAlias"]
+            keyPassword keyProps["keyPass"]
+        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ndk {
+                abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            }
+        }
+        prerelease {
+            applicationIdSuffix ".prerelease"
+            signingConfig signingConfigs.prerelease
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ndk {
+                abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            }
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ndk {
+                abiFilters 'armeabi'
+            }
+        }
+    }
+
+    flavorDimensions 'tier'
+    productFlavors {
+        dev {
+            dimension 'tier'
+        }
+        prod {
+            dimension 'tier'
+        }
+    }
+
+    variantFilter { variant ->
+        def flavorNames = variant.flavors.name
+        def buildTypeNames = variant.buildType.name
+        if ((flavorNames.contains("dev") && buildTypeNames.contains("prerelease"))
+                || (flavorNames.contains("dev") && buildTypeNames.contains("release"))
+                || (flavorNames.contains("prod") && buildTypeNames.contains("debug"))) {
+            setIgnore(true)
+        }
+    }
+
+    compileOptions {
+        encoding = "UTF-8"
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "ble-test-${variant.flavorName}-${variant.buildType.name}-v${versions.versionName}.apk"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.github.forvv231:EasyNavigation:1.0.3'
+    implementation 'com.github.goweii:ActionBarEx:3.2.2'
+    implementation 'com.android.support:multidex:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.11'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.zyao89:zloading:1.2.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha03'
+    implementation 'com.carson_ho:Super_EditText:1.0.0'
+    implementation 'com.longsh:PagerSlidingTabStrip:1.0.1'
+    // 引入的第三方蓝牙库 https://github.com/duoshine/AndroidBluetoothPro
+    implementation 'duoshine.rxjava2:rxandroidbluetooth:1.4'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.11'
+}

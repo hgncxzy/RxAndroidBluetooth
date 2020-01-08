@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <per.goweii.actionbarex.common.ActionBarCommon
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#ccffffff"
+        app:ab_autoImmersion="false"
+        app:ab_bottomLineColor="@color/line"
+        app:ab_bottomLineHeight="0dp"
+        app:ab_statusBarColor="@color/transparent"
+        app:ab_statusBarMode="dark"
+        app:ab_statusBarVisible="false"
+        app:ab_titleBarHeight="48dp"
+        app:abc_leftText="Device disconnect"
+        app:abc_titleTextMaxWidth="360dp" />
+
+    <com.next.easynavigation.view.EasyNavigationBar
+        android:id="@+id/navigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cabinetCode">
+        <item name="Z">Z</item>
+        <item name="A">A</item>
+        <item name="B">B</item>
+        <item name="C">C</item>
+        <item name="D">D</item>
+        <item name="E">E</item>
+        <item name="F">F</item>
+    </string-array>
+    <string-array name="cellIndex">
+        <item name="cell1">1</item>
+        <item name="cell2">2</item>
+        <item name="cell3">3</item>
+        <item name="cell4">4</item>
+        <item name="cell5">5</item>
+        <item name="cell6">6</item>
+        <item name="cell7">7</item>
+        <item name="cell8">8</item>
+        <item name="cell9">9</item>
+        <item name="cell10">10</item>
+        <item name="cell11">11</item>
+        <item name="cell12">12</item>
+        <item name="cell13">13</item>
+        <item name="cell14">14</item>
+        <item name="cell15">15</item>
+        <item name="cell16">16</item>
+        <item name="cell17">17</item>
+        <item name="cell18">18</item>
+        <item name="cell19">19</item>
+        <item name="cell20">20</item>
+    </string-array>
+
+</resources>
