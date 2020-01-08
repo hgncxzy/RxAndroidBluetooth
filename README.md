@@ -13,6 +13,10 @@
 
 ### 使用
 
+*注意：也已可以查看我的另外两个 ble 项目，都包含蓝牙工具和适合快速上手开发 ble 项目。分别是：*
+
+*[BLE-SDK](https://github.com/hgncxzy/BLE-SDK) 和 [AndroidBleTools](https://github.com/hgncxzy/AndroidBleTools)*
+
 该项目可用于快速上手低功耗蓝牙项目开发。具体步骤如下：
 
 #### 引入依赖
