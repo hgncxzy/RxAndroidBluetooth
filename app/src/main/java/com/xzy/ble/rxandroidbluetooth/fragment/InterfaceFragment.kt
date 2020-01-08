@@ -52,7 +52,6 @@ class InterfaceFragment : Fragment(), MyReceiver.Receiver {
 
     private fun unRegisterMyReceiver() {
         requireActivity().unregisterReceiver(myReceiver)
-
     }
 
     @SuppressLint("SetTextI18n")

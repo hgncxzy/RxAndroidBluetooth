@@ -133,7 +133,7 @@ dependencies {
     implementation 'com.carson_ho:Super_EditText:1.0.0'
     implementation 'com.longsh:PagerSlidingTabStrip:1.0.1'
     // 引入的第三方蓝牙库 https://github.com/duoshine/AndroidBluetoothPro
-    implementation 'duoshine.rxjava2:rxandroidbluetooth:1.4'
+    implementation 'com.github.duoshine:AndroidBluetoothPro:1.8'
 
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.11'

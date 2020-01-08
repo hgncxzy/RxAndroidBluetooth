@@ -173,6 +173,5 @@ class DeviceFragment : Fragment(), AdapterView.OnItemClickListener, MyReceiver.R
 
     private fun unRegisterMyReceiver() {
         requireActivity().unregisterReceiver(myReceiver)
-
     }
 }
