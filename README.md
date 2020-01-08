@@ -431,7 +431,3 @@ private fun registerMyReceiver() {
     }
 ```
 
-### 下载体验
-
-![https://github.com/hgncxzy/RxAndroidBluetooth/blob/master/apk/1578470010.png](https://github.com/hgncxzy/RxAndroidBluetooth/blob/master/apk/1578470010.png)
-
