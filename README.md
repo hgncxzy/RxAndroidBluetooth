@@ -17,6 +17,8 @@
 
 *[BLE-SDK](https://github.com/hgncxzy/BLE-SDK) 和 [AndroidBleTools](https://github.com/hgncxzy/AndroidBleTools)*
 
+*调试工具请参考 [AndroidBleTools](https://github.com/hgncxzy/AndroidBleTools) 或者[Xbluetooth](https://github.com/duoshine/Xbluetooth)*
+
 该项目可用于快速上手低功耗蓝牙项目开发。具体步骤如下：
 
 #### 引入依赖
