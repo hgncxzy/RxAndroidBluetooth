@@ -2,7 +2,7 @@
 
 ### 概述
 
-基于 git 项目 [AndroidBluetoothPro](https://github.com/duoshine/AndroidBluetoothPro) 封装实现的蓝牙调试工具 demo。基于该库，实现了如下功能：
+基于 git 项目 [AndroidBluetoothPro](https://github.com/duoshine/AndroidBluetoothPro) 封装实现的 BLE 蓝牙开发 demo。基于该库，实现了二次封装，重点关注两个类，BLE.kt 和 Cmd.kt 。一个实现了对蓝牙操作的二次封装，一个实现了对业务接口指令的封装。具体实现了如下功能：
 
 1. 获取蓝牙列表(过滤了蓝牙名称为空的设备)
 2. 搜索、连接、重连以及其他状态改变发送广播的二次封装
@@ -340,7 +340,7 @@ class MyReceiver(receiver: Receiver) : BroadcastReceiver() {
 }
 ```
 
-
+记得修改 serviceUUID、writeUUID、notifyUUID 为你真实的 UUID（如果没有请硬件工程师或者厂商提供即可）
 
 #### 实现广播接收器中的接口
 
